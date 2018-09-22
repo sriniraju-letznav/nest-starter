@@ -1,0 +1,83 @@
+POST http://localhost:3000/movie
+content-type: application/json
+
+{
+    "year": 2018,
+    "title": "Rush1",
+    "info": {
+        "directors": ["Ron Howard"],
+        "release_date": "2013-09-02T00:00:00Z",
+        "rating": 8.3,
+        "genres": [
+            "Action",
+            "Biography",
+            "Drama",
+            "Sport"
+        ],
+        "image_url": "http://ia.media-imdb.com/images/M/MV5BMTQyMDE0MTY0OV5BMl5BanBnXkFtZTcwMjI2OTI0OQ@@._V1_SX400_.jpg",
+        "plot": "A re-creation of the merciless 1970s rivalry between Formula One rivals James Hunt and Niki Lauda.",
+        "rank": 2,
+        "running_time_secs": 7380,
+        "actors": [
+            "Daniel Bruhl",
+            "Chris Hemsworth",
+            "Olivia Wilde"
+        ]
+    }
+}
+
+###
+GET http://localhost:3000/movie
+
+###
+GET http://localhost:3000/movie/2
+
+###
+PUT http://localhost:3000/movie/2
+content-type: application/json
+
+{
+    "year": 2018,
+    "title": "Rush",
+    "info": {
+        "directors": ["Ron Howard"],
+        "release_date": "2013-09-02T00:00:00Z",
+        "rating": 8.3,
+        "genres": [
+            "Action",
+            "Biography",
+            "Drama",
+            "Sport"
+        ],
+        "image_url": "http://ia.media-imdb.com/images/M/MV5BMTQyMDE0MTY0OV5BMl5BanBnXkFtZTcwMjI2OTI0OQ@@._V1_SX400_.jpg",
+        "plot": "A re-creation of the merciless 1970s rivalry between Formula One rivals James Hunt and Niki Lauda.",
+        "rank": 2,
+        "running_time_secs": 7380,
+        "actors": [
+            "Daniel Bruhl",
+            "Chris Hemsworth",
+            "Olivia Wilde"
+        ]
+    }
+}
+
+###
+DELETE http://localhost:3000/movie/2
+
+###
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{ "username" : "less", "email": "less@outlook.com",  "password": "topsecrete"}
+
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{ "username": "less",  "password": "topsecrete"}
+
+
+###
+GET http://localhost:3000/movie/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Imxlc3MiLCJpYXQiOjE1Mzc2MDA5NTgsImV4cCI6MTUzNzYwNDU1OH0.Ha_Yl8SusyNZjjUV_RcGfgghkW6iveuT2cHpPKhJuKw
+Content-Type: application/json
